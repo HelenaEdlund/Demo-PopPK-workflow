@@ -35,7 +35,7 @@ source(file = file.path(scripts_dir, "s01_datasetPrep.R"))
 
 # The .Rmd scripts below generate a .html file with the output. 
 # If you also want graphs and tables to be outputted as separate files, 
-# set printResults to TRUE
+# set print_results to TRUE
 
 # ----------- Dataset checkout ------------------
 # Go through the script to make sure all relevant columns are included and checked
@@ -43,15 +43,15 @@ rmarkdown::render(input=file.path("Scripts","s02_datasetReview.Rmd"))
 
 # ----------- Summarize excluded data ------------------
 rmarkdown::render(input=file.path("Scripts","s03_summaryOfExcludedData.Rmd"), 
-                  params = list(printResults=F))
+                  params = list(print_results=TRUE))
 
 # ----------- Exploratory Data Analysis ------------------
 rmarkdown::render(input = file.path("Scripts", "s04_EDACovariates.Rmd"), 
-                  params = list(printResults=F))
+                  params = list(print_results=F))
 rmarkdown::render(input = file.path("Scripts", "s05_EDAConcTime.Rmd"), 
-                  params = list(printResults=F))
+                  params = list(print_results=F))
 rmarkdown::render(input = file.path("Scripts", "s06_EDAPkLinearity.Rmd"), 
-                  params = list(printResults=F))
+                  params = list(print_results=F))
 
 # The error: 
 # Error in unlockBinding("params", <environment>) : no binding for "params"
