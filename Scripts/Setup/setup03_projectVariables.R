@@ -16,29 +16,35 @@
 # ------------------------------------------------------------------
 #  People
 # ------------------------------------------------------------------
-analystName <- "Analyst"
-reviewerName <- "Reviewer"
-approverName <- "Approver"
-programmerName <- "Programmer" 
+analystName <- "A. Analyst"
+reviewerName <- "A. Reviewer"
+approverName <- "A. Approver"
+programmerName <- "A. Programmer" 
 
 # ------------------------------------------------------------------
 #  Data
 # ------------------------------------------------------------------
 
-# --------------------
+# -------------------- 
 #  Source dataset
 # --------------------
-sourcedataFileName      <- "filename_deliverydate.csv"
-deliveryDate  <- "deliverydate"
+sourcedataFileName      <- "AZD0000_20180101.csv"
+dataSpecFileName        <- "dataVariablesSpecification.csv" 
+# used by pmxplore::r_data_structure
+
+# deliveryDate  <- "deliverydate"
 # # or extract from filename it contains deliverydate:
-# deliveryDate  <- 
-#   paste(str_extract_all(sourcedataFileName, pattern ="[:digit:]")[[1]], collapse = "")
-dataSpecFileName        <- "dataSpecFileName.csv" # used by pmxplore::r_data_structure
+deliveryDate  <-
+  sourcedataFileName %>% 
+  str_extract_all(pattern ="(_).*\\d") %>% 
+  str_replace_all(pattern ="_", "") %>% 
+  unlist %>% 
+  as.numeric
 
 # --------------------
 #  Drug and lloq
 # --------------------
-drugName <- "DrugName"
+drugName <- "AZD0000"
 DVunit <- "ng/mL"
 LLOQ <- 1
 # molecularWeight <- # g/mol
@@ -51,7 +57,7 @@ ostudies <- c("d0000c0001","d0000c0002")   # original names of studies that shou
 studies  <- c(1,2)            # numeric version 
 cohorts  <- c(1,2)            # cohorts 
 # parts  <- c(1001,1002)      # parts 
-doses    <- c(25,100, 150, 300)         # doses 
+doses    <- c(25, 100, 150, 300)         # doses 
 
 # Define columns in dataset (and what type)
 studyRelatedCols <- 

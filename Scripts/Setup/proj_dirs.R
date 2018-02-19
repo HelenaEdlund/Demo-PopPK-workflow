@@ -1,34 +1,34 @@
 #directories at activity level
 # do not remove the leading ".", it will cause problems with latex/knitr)
 
-scripts_dir <- file.path(".", "scripts")
-derived_data_dir <- file.path(".", "derived_data")
-model_dir <- file.path(".", "models")
-report_dir <- file.path(".", "report")
-results_dir <- file.path(".", "results")
-sim_dir <- file.path(".", "simulations")
-source_data_dir <- file.path(".", "source_data")
+scripts_dir <- file.path(".", "Scripts")
+derived_data_dir <- file.path(".", "DerivedData")
+model_dir <- file.path(".", "Models")
+report_dir <- file.path(".", "Report")
+results_dir <- file.path(".", "Results")
+sim_dir <- file.path(".", "Simulations")
+source_data_dir <- file.path(".", "SourceData")
 
 ##sub-directories
 #script_dir
-setup_dir <- file.path(scripts_dir, "setup")
-functions_dir <- file.path(scripts_dir, "functions")
+setup_dir <- file.path(scripts_dir, "Setup")
+functions_dir <- file.path(scripts_dir, "Functions")
 
 #model_dir
-base_model_dir <- file.path(model_dir, "base_model")
-covariate_model_dir <- file.path(model_dir, "covariate_model")
+base_model_dir <- file.path(model_dir, "BaseModel")
+covariate_model_dir <- file.path(model_dir, "CovariateModel")
 
 #result_dir
-res_other_dir <- file.path(results_dir, "other")
-res_eda_dir <- file.path(results_dir, "exploratory_data_analysis")
-res_base_model_dir <- file.path(results_dir, "base_model")
-res_cov_model_dir <- file.path(results_dir, "covariate_model")
+res_other_dir <- file.path(results_dir, "Other")
+res_eda_dir <- file.path(results_dir, "ExploratoryDataAnalysis")
+res_base_model_dir <- file.path(results_dir, "BaseModel")
+res_cov_model_dir <- file.path(results_dir, "CovariateModel")
 
 #report_dir
-rep_setup_dir <- file.path(report_dir, "setup")
-rep_sections_dir <- file.path(report_dir, "sections")
-rep_appendicies_dir <- file.path(report_dir, "appendices")
-rep_images_dir <- file.path(report_dir, "images")
+rep_setup_dir <- file.path(report_dir, "Setup")
+rep_sections_dir <- file.path(report_dir, "Sections")
+rep_appendicies_dir <- file.path(report_dir, "Appendices")
+rep_images_dir <- file.path(report_dir, "Images")
 
 ##list_all_directories
 all_dir <-
