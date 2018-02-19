@@ -13,7 +13,7 @@
 # executed. 
 
 # Function to source all scripts in one directory
-sourceDir <- function(path, trace=TRUE, ...) {
+source_dir <- function(path, trace=TRUE, ...) {
   for(nm in list.files(path, pattern = "[.][Rr]$")){
     if(trace) cat(nm,":")
     source(file.path(path, nm), ...)
@@ -22,7 +22,7 @@ sourceDir <- function(path, trace=TRUE, ...) {
 }
 
 # ----------- Project setup -------------------
-sourceDir("./Scripts/Setup")
+source_dir("./Scripts/Setup")
 # sourceDir("./Scripts/Functions")
 # tidyproject checks
 Renvironment_info()

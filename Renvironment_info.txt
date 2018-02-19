@@ -1,4 +1,4 @@
-Created at 2018-02-19 13:26:17 by kfqk581
+Created at 2018-02-19 14:06:52 by kfqk581
 
 R version 3.4.3 (2017-11-30)
 Platform: x86_64-apple-darwin16.7.0 (64-bit)
@@ -15,7 +15,7 @@ attached base packages:
 [1] grid
 
 other attached packages:
- [1] rmarkdown_1.8           xpmworkbench_0.1.0.9001 devtools_1.13.4        
+ [1] rmarkdown_1.8           xpmworkbench_0.1.0.9001 devtools_1.13.5        
  [4] NMproject_0.3.1         xpmxplore_0.1.0         blueprint_0.6.1        
  [7] knitr_1.19              rprojroot_1.3-2         pixiedust_0.8.1        
 [10] gridExtra_2.3           tibble_1.4.2            ggplot2_2.2.1          
@@ -28,13 +28,13 @@ loaded via a namespace (and not attached):
  [5] digest_0.6.15       lmtest_0.9-35       psych_1.7.8         foreach_1.4.4      
  [9] R6_2.2.2            plyr_1.8.4          backports_1.1.2     acepack_1.4.1      
 [13] pillar_1.1.0        utils_3.4.3         rlang_0.1.6         lazyeval_0.2.1     
-[17] rstudioapi_0.7      data.table_1.10.4-3 gam_1.14-4          rpart_4.1-11       
+[17] rstudioapi_0.7      data.table_1.10.4-3 gam_1.14-4          rpart_4.1-12       
 [21] Matrix_1.2-12       checkmate_1.8.5     splines_3.4.3       foreign_0.8-69     
 [25] htmlwidgets_1.0     munsell_0.4.3       broom_0.4.3         compiler_3.4.3     
 [29] pkgconfig_2.0.1     stats_3.4.3         base64enc_0.1-3     mnormt_1.5-5       
 [33] htmltools_0.3.6     nnet_7.3-12         xpose4_4.6.0        htmlTable_1.11.2   
 [37] codetools_0.2-15    Hmisc_4.1-1         grDevices_3.4.3     reshape_0.8.7      
-[41] MASS_7.3-47         nlme_3.1-131        gtable_0.2.0        git2r_0.21.0       
+[41] MASS_7.3-48         nlme_3.1-131.1      gtable_0.2.0        git2r_0.21.0       
 [45] magrittr_1.5        datasets_3.4.3      scales_0.5.0        tidyproject_0.3.1  
 [49] stringi_1.1.6       reshape2_1.4.3      bindrcpp_0.2        latticeExtra_0.6-28
 [53] graphics_3.4.3      base_3.4.3          Formula_1.2-2       RColorBrewer_1.1-2 
