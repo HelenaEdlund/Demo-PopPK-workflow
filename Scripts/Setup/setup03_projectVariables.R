@@ -16,10 +16,10 @@
 # ------------------------------------------------------------------
 #  People
 # ------------------------------------------------------------------
-analystName <- "A. Analyst"
-reviewerName <- "A. Reviewer"
-approverName <- "A. Approver"
-programmerName <- "A. Programmer" 
+analyst_name <- "A. Analyst"
+reviewer_name <- "A. Reviewer"
+approver_name <- "A. Approver"
+programmer_name <- "A. Programmer" 
 
 # ------------------------------------------------------------------
 #  Data
@@ -28,13 +28,13 @@ programmerName <- "A. Programmer"
 # -------------------- 
 #  Source dataset
 # --------------------
-sourcedataFileName      <- "AZD0000_20180101.csv"
-dataSpecFileName        <- "dataVariablesSpecification.csv" 
+sourcedata_filename      <- "AZD0000_20180101.csv"
+dataSpec_filename        <- "dataVariablesSpecification.csv" 
 # used by pmxplore::r_data_structure
 
-# deliveryDate  <- "deliverydate"
+# delivery_date  <- "deliverydate"
 # # or extract from filename it contains deliverydate:
-deliveryDate  <-
+delivery_date  <-
   sourcedataFileName %>% 
   str_extract_all(pattern ="(_).*\\d") %>% 
   str_replace_all(pattern ="_", "") %>% 
@@ -44,8 +44,8 @@ deliveryDate  <-
 # --------------------
 #  Drug and lloq
 # --------------------
-drugName <- "AZD0000"
-DVunit <- "ng/mL"
+drug_name <- "AZD0000"
+dv_unit <- "ng/mL"
 LLOQ <- 1
 # molecularWeight <- # g/mol
 
@@ -60,34 +60,35 @@ cohorts  <- c(1,2)            # cohorts
 doses    <- c(25, 100, 150, 300)         # doses 
 
 # Define columns in dataset (and what type)
-studyRelatedCols <- 
+cols_study_related <- 
   c("OSTUDYID", "STUDYID", "COHORT","DOSE", "NMSEQSID", "OSID")
 # "PART"
 
 # Continuous columns (not including covariates)
-numericCols <- c('TAFD','TAPD','DV','LNDV')
+cols_numeric <- c('TAFD','TAPD','DV','LNDV')
 
 ## Character/Categorical columns (not including covariates)
-factorCols <- c('C','AMT','OCC','MDV','CMT','BLQ','EVID',"FREQ", "COMMENT")
+cols_factors <- c('C','AMT','OCC','MDV','CMT','BLQ','EVID',"FREQ", "COMMENT")
 
 ## Lists of continuous and categorical covariates (which may change with time)
 # included these as examples here - they are not actually changing
-catCov <- c("BRENAL")
-contCov <- c("BWT","BBMI")
+cols_cat_cov <- c("BRENAL")
+cols_cont_cov <- c("BWT","BBMI")
 
 ## List of baseline continuous and categorical covariates (should not change with time)
-bCatCov  <- c("SEXM","RACE","ETHNIC","BRENAL")
-bContCov <- c("AGE","BSCR","BEGFR","BWT","BHT","BBMI")
+base_cat_cov  <- c("SEXM","RACE","ETHNIC","BRENAL")
+base_cont_cov <- c("AGE","BSCR","BEGFR","BWT","BHT","BBMI")
 
-allCols <- c(studyRelatedCols, numericCols, factorCols, bCatCov, bContCov)
+all_cols <- c(cols_study_related, cols_numeric, cols_factors, 
+              cols_cat_cov,cols_cont_cov,base_cat_cov,base_cont_cov)
 
 # ------------------------------------------------------------------
 #  List lables and settings for plots used in EDA
 # ------------------------------------------------------------------
 # Reoccuring labels
-labTAPD <- "Time after dose (h)"
-labTAFD <- "Time after first dose (h)"
-labConc <- paste0(drugName," concentration (", DVunit,")")
+labs_TAPD <- "Time after dose (h)"
+labs_TAFD <- "Time after first dose (h)"
+labs_conc <- paste0(drug_name," concentration (", dv_unit,")")
 
 # Re-occuring x-axis breaks
-tapdBreaks <- c(0, 2, 4, 6, 8, seq(from=12, to=200, by=6))
+tapd_breaks <- c(0, 2, 4, 6, 8, seq(from=12, to=200, by=6))
