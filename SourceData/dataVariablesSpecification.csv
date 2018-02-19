@@ -1,0 +1,43 @@
+Variable Name,Label,Code,Decode,Description,R Type
+C,Excluded,c,Excluded,NA,Character
+NMSEQSID,Numeric sequential idenitifier,NA,NA,NA,Categorical
+OSID,Original subject identifier,NA,NA,NA,Categorical
+TAFD,Time after first dose,NA,NA,Time after first dose,Numeric
+TAPD,Time after prior dose,NA,NA,Time after dose,Numeric
+AMT,Drug amount,NA,NA,Drug amount,Numeric
+DV,Dependent variable,NA,NA,Observation,Numeric
+LNDV,ln transformation DV,NA,NA,Ln observation,Numeric
+MDV,Missing DV,0,Observation,NA,Numeric
+MDV,Missing DV,1,Missing observation,NA,Numeric
+EVID,Event identifier,0,Observation,0,Categorical
+EVID,Event identifier,1,Dose,1,Categorical
+CMT,Compartment,1,Dose depot,Dose depot,Categorical
+CMT,Compartment,2,Plasma,Plasma,Categorical
+BLQ,Below quantification limit,0,above LQ,Non-BLQ,Categorical
+BLQ,Below quantification limit,1,BLQ,BLQ,Categorical
+OCC,Occasion ,NA,NA,NA,Categorical
+STUDYID,Numeric study code,NA,NA,NA,Categorical
+OSTUDYID,Original study code,NA,NA,NA,Categorical
+COHORT,Cohort,NA,NA,NA,Categorical
+DOSE,Dose,NA,NA,NA,Categorical
+FREQ,Dosing frequency,31,QD,QD,Categorical
+AGE,Age,NA,NA,Age,Numeric
+SEXM,Sex,0,Female,Female,Categorical
+SEXM,Sex,1,Male,Male,Categorical
+RACE,Race,1,WHITE,White,Categorical
+RACE,Race,2,BLACK OR AFRICAN AMERICAN,Black/African American,Categorical
+RACE,Race,3,ASIAN,Asian,Categorical
+RACE,Race,9,OTHER,Other,Categorical
+ETHNIC,Ethnicity,1,Hispanic or Latino,Hispanic/Latino,Categorical
+ETHNIC,Ethnicity,2,Not Hispanic or Latino,Not Hispanic/Latino,Categorical
+ETHNIC,Ethnicity,3,Not Reported,Not Reported,Categorical
+ETHNIC,Ethnicity,4,Unknown,Unknown,Categorical
+BSCR,baseline serum creatinine,NA,NA,Baseline serum creatinine,Numeric
+BEGFR,baseline estimated glumerual filtration rate,NA,NA,Baseline estimated glumerual filtration rate,Numeric
+BRENAL,baseline renal impariment status,1,Normal (eGFR (mL/min/1.73m2) >=90; or CLcr (mL/min) >= 90),Normal,Categorical
+BRENAL,baseline renal impariment status,2,Mild (eGFR (mL/min/1.73m2) 60-89; or CLcr(mL/min) 60-89),Mild,Categorical
+BRENAL,baseline renal impariment status,3,Moderate (eGFR (mL/min/1.73m2) 30-59; or CLcr(mL/min) 30-59),Moderate,Categorical
+BHT,Baseline Height ,NA,NA,Body height ,Numeric
+BWT,Baseline body weight,NA,NA,Body weight,Numeric
+BBMI,Baseline body mass index,NA,NA,Baseline body mass index,Numeric
+COMMENT,Comment,NA,NA,Comment,Character
