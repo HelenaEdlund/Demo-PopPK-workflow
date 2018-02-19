@@ -16,10 +16,11 @@
 # ------------------------------------------------------------------
 #  People
 # ------------------------------------------------------------------
-analyst_name <- "A. Analyst"
-reviewer_name <- "A. Reviewer"
-approver_name <- "A. Approver"
-programmer_name <- "A. Programmer" 
+all_people <- list(
+  analyst_name = "A. Analyst", 
+  reviewer_name = "A. Reviewer",
+  approver_name = "A. Approver",
+  programmer_name = "A. Programmer") 
 
 # ------------------------------------------------------------------
 #  Data
@@ -29,13 +30,13 @@ programmer_name <- "A. Programmer"
 #  Source dataset
 # --------------------
 sourcedata_filename      <- "AZD0000_20180101.csv"
-dataSpec_filename        <- "dataVariablesSpecification.csv" 
+dataspec_filename        <- "dataVariablesSpecification.csv" 
 # used by pmxplore::r_data_structure
 
 # delivery_date  <- "deliverydate"
 # # or extract from filename it contains deliverydate:
 delivery_date  <-
-  sourcedataFileName %>% 
+  sourcedata_filename %>% 
   str_extract_all(pattern ="(_).*\\d") %>% 
   str_replace_all(pattern ="_", "") %>% 
   unlist %>% 

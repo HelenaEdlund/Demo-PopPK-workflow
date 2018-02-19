@@ -1,8 +1,8 @@
 ###################################################
 # s01_datasetPrep.R
 # 
-# Author: 
-# Created on: 
+# Author: A. Analyst
+# Created on: 2018-02-19
 # Description: Dataset preparation for R
 # Dependencies: Setup 
 ###################################################
@@ -14,7 +14,7 @@
 # Read in dataset
 # -----------------------------------------------
 # Data should b eplaced in the SourceData dir and not modified
-rawdata <- read.csv(file=file.path(source_data_dir, sourcedataFileName),
+rawdata <- read.csv(file=file.path(source_data_dir, sourcedata_filename),
                     stringsAsFactors=F, na.strings = c(".", "NA", "-99"))
 
 # remove C=C  (original data still in "rawdata")
@@ -55,7 +55,7 @@ add_variables <- function(dataset){
 # Set the structure and add variables
 # -----------------------------------------------
 data  <- r_data_structure(data, 
-                          data_spec=file.path(source_data_dir, dataSpecFileName))
+                          data_spec=file.path(source_data_dir, dataspec_filename))
 data  <- add_variables(data)
 # str(data)
 
@@ -71,7 +71,7 @@ baseline_data <- data %>%
 # 2.1 Exclude missing samples and dose events
 conc_data <- data %>% 
   filter(EVID==0) %>% 
-  filter(MDV==1 & is.na(BLQ)) %>% 
+  filter(!(MDV==1 & is.na(BLQ))) %>% 
   # Plot LLOQ values in figures as DV=LLOQ/2
   mutate(DV = ifelse(BLQ == "BLQ", LLOQ/2, DV))   
 
@@ -80,7 +80,9 @@ conc_data_noBLQ <- conc_data %>%
   filter(BLQ=="Non-BLQ")
 
 # 2.3 List of subsets to generate pages with 12 individuals per page
-conc_data_id_splits <- ind_data_split(conc_data, n_per_page = 12, id="NMSEQSID")
+conc_data_id_splits <- 
+  ind_data_split(conc_data, id="NMSEQSID", 
+                 n_per_page = 12)
 
 # 2.4 List of subsets for study and dose group
 conc_data <- conc_data %>% 
@@ -97,4 +99,3 @@ conc_data_studydose_split <-
 ############ Save environment and then clear environment ############
 # (need to have the datasetsets and the dataset names)
 save.image(file = paste(scripts_dir, "s01.RData", sep="/"))
-

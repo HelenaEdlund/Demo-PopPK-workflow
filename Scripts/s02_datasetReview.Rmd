@@ -1,9 +1,10 @@
 ---
 title: "Dataset review"
-author: "Author"
-date: "Date"
+author: "A. Analyst"
+date: "2018-02-19"
 output: html_document
 ---
+
 ```{r setup, include=FALSE}
 ###################################################
 # s02_datasetReview.Rmd
@@ -22,7 +23,7 @@ Load the dataset as prepared by "s01_datasetPrep.R":
 ```{r, echo=T, message=F}
 load(file=file.path("./Scripts","s01.RData"))
 # load packages
-source(file=file.path("./Scripts","Setup","setup01_projectPackages.R"))
+source(file=file.path(setup_dir,"setup01_projectPackages.R"))
 ```
 
 This review refers to the full data. That is, data including any rows commented out by "C".
