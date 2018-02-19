@@ -30,7 +30,7 @@ check_session()
 
 
 # ----------- Read in source data and set stucture for R ------------------
-source(file = file.path(scriptsDir, "s01_datasetPrep.R"))
+source(file = file.path(scripts_dir, "s01_datasetPrep.R"))
 
 
 # The .Rmd scripts below generate a .html file with the output. 
