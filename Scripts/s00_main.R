@@ -23,7 +23,7 @@ source_dir <- function(path, trace=TRUE, ...) {
 
 # ----------- Project setup -------------------
 source_dir("./Scripts/Setup")
-sourceDir("./Scripts/Functions")
+source_dir("./Scripts/Functions")
 # tidyproject checks
 Renvironment_info()
 check_session()
