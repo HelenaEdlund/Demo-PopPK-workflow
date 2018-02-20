@@ -1,0 +1,5 @@
+"filename","Description"
+"AZD0000_nm_20180101.csv","Dataset prepared for NONMEM use: (i) only numerical columns selected, (ii) missing covariates imputed, (iii) NMSEQSID renamed to ID, (iv) TAFD renamed to TIME"
+"AZD0000_nm_20180101_comb.csv","RATE column added to estimate duration of zero-order absorption"
+"AZD0000_nm_20180101_par.csv","Duplicated dose record added for estimation of sequential or parallel zero- and first order absorption"
+"AZD0000_nm_20180101_transit.csv","Dummy variable added at 10 min before each dose in order to avoid negative time after dose results for transit compartment model"
