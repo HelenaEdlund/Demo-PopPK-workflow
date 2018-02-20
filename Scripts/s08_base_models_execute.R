@@ -85,7 +85,7 @@ if(model_no=="001"){
   based_on <- NA
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -110,7 +110,7 @@ if(model_no=="001"){
   
   run001rend <- cltfile_update(run001rend)
   run001rend <- add_comments(run001rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run001rend, file=file.path(base_model_dir, filename))
@@ -118,11 +118,11 @@ if(model_no=="001"){
   # build in as an option in nmproject that warns you about over-writing the file? 
   
   # Command line update
-  psn_execute <- execute_update(psn_execute_temp, filename, dir_name) 
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name) 
   # note: nmproject does not work with clean=3
   
   # --- Add to run using nmproject
-  mod1 <- nm(cmd = psnExecute, 
+  mod1 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod1, quiet=F)
 }
@@ -140,7 +140,7 @@ if(model_no=="002"){
   based_on <- "001"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -155,16 +155,16 @@ if(model_no=="002"){
   
   run002rend <- cltfile_update(run002rend)
   run002rend <- add_comments(run002rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run002rend, file=file.path(base_model_dir, filename)) 
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod2 <- nm(cmd = psnExecute, 
+  mod2 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod2, quiet=F)
 }
@@ -181,7 +181,7 @@ if(model_no=="003"){
   based_on <- "002"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -207,16 +207,16 @@ if(model_no=="003"){
   # update tables
   run003rend <- cltfile_update(run003rend)
   run003rend <- add_comments(run003rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run003rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod3 <- nm(cmd = psnExecute, 
+  mod3 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod3, quiet=F)
 }
@@ -234,7 +234,7 @@ if(model_no=="003m3"){
   # based_on <- NA  
   #
   # output and dir to run
-  #   filename   <- paste0("run", model_no)
+  #   filename   <- paste0("run", model_no, ".mod")
   #   dir_name    <- paste0("dir_run", model_no)
   #   
   #   # Select seed to use for NPDEs
@@ -260,16 +260,16 @@ if(model_no=="003m3"){
   #   # update tables
   #   run003m3rend <- cltfile_update(run003m3rend)
   #   run003m3rend <- add_comments(run003m3rend, ref_run = based_on,
-  #                              description = description, author = analystName)
+  #                              description = description, author = all_people$analyst_name)
   #   
   #   # --- write file to cluster
   #   write(run003m3rend, file=file.path(base_model_dir, filename))
   #   
   #   # command line update
-  #   psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  #   psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   #   
   #   # --- Add to run using nmproject
-  #   mod3m3 <- nm(cmd = psnExecute, 
+  #   mod3m3 <- nm(cmd = psn_execute, 
   #              run_in = base_model_dir)
   #   run(mod3m3, quiet=F)
 }
@@ -286,7 +286,7 @@ if(model_no=="004"){
   based_on <- "001"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -316,16 +316,16 @@ if(model_no=="004"){
   # update tables
   run004rend <- cltfile_update(run004rend)
   run004rend <- add_comments(run004rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run004rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod4 <- nm(cmd = psnExecute, 
+  mod4 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod4, quiet=F)
 }
@@ -342,7 +342,7 @@ if(model_no=="005"){
   based_on <- "004" # and 002 (1 cmt)
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -358,16 +358,16 @@ if(model_no=="005"){
   # update tables
   run005rend <- cltfile_update(run005rend)
   run005rend <- add_comments(run005rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run005rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod5 <- nm(cmd = psnExecute, 
+  mod5 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod5, quiet=F)
 }
@@ -384,7 +384,7 @@ if(model_no=="006"){
   based_on <- "005" # and 003 (1 cmt)
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -415,16 +415,16 @@ if(model_no=="006"){
   # update tables
   run006rend <- cltfile_update(run006rend)
   run006rend <- add_comments(run006rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run006rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod6 <- nm(cmd = psnExecute, 
+  mod6 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod6, quiet=F)
 }
@@ -452,7 +452,7 @@ if(model_no=="007"){
   based_on <- "006"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -469,16 +469,16 @@ if(model_no=="007"){
   # update tables
   run007rend <- cltfile_update(run007rend)
   run007rend <- add_comments(run007rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run007rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod7 <- nm(cmd = psnExecute, 
+  mod7 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod7, quiet=F)
 } 
@@ -501,7 +501,7 @@ if(model_no=="008"){
   based_on <- "006" 
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -534,16 +534,16 @@ if(model_no=="008"){
   # update tables
   run008rend <- cltfile_update(run008rend)
   run008rend <- add_comments(run008rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run008rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod8 <- nm(cmd = psnExecute, 
+  mod8 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod8, quiet=F)
 } 
@@ -565,7 +565,7 @@ if(model_no=="009"){
   based_on <- "008"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -582,16 +582,16 @@ if(model_no=="009"){
   # update tables
   run009rend <- cltfile_update(run009rend)
   run009rend <- add_comments(run009rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run009rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod9 <- nm(cmd = psnExecute, 
+  mod9 <- nm(cmd = psn_execute, 
              run_in = base_model_dir)
   run(mod9, quiet=F)
 } 
@@ -608,7 +608,7 @@ if(model_no=="010"){
   based_on <- "008"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -624,16 +624,16 @@ if(model_no=="010"){
   # update tables
   run010rend <- cltfile_update(run010rend)
   run010rend <- add_comments(run010rend, ref_run = based_on,
-                             description = description, author = analystName)
+                             description = description, author = all_people$analyst_name)
   
   # --- write file to cluster
   write(run010rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod10 <- nm(cmd = psnExecute, 
+  mod10 <- nm(cmd = psn_execute, 
               run_in = base_model_dir)
   run(mod10, quiet=F)
 } 
@@ -654,7 +654,7 @@ if(model_no=="011"){
   based_on <- "010"
   
   # output and dir to run
-  filename   <- paste0("run", model_no)
+  filename   <- paste0("run", model_no, ".mod")
   dir_name    <- paste0("dir_run", model_no)
   
   # Select seed to use for NPDEs
@@ -674,10 +674,10 @@ if(model_no=="011"){
   write(run011rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
+  psn_execute <- execute_update(psn_execute_template, filename, dir_name)  
   
   # --- Add to run using nmproject
-  mod11 <- nm(cmd = psnExecute, 
+  mod11 <- nm(cmd = psn_execute, 
               run_in = base_model_dir)
   run(mod11, quiet=F)
 } 
