@@ -17,7 +17,7 @@ nm_tab <- list(
 # (parms and seed defined globally for each run)
 cltfile_update <- 
   function(cltfile, run=model_no, p=parms, s=seed, 
-           nm_tab=nm_tab, 
+           nm_vars=nm_tab, 
            est_method="CONDITIONAL INTER", cov=T){
 
     # Add estimation
@@ -33,7 +33,7 @@ cltfile_update <-
     # Add table
     par <- paste(p, collapse = " ")
     tab <- paste("$TABLE", 
-                 paste(unlist(nm_tab), collapse = " "), 
+                 paste(unlist(nm_vars), collapse = " "), 
                  par,
                  "NOAPPEND ONEHEADER NOPRINT",
                  paste0("FILE=tab", model_no), 
@@ -56,3 +56,4 @@ execute_update <- function(template, file=filename, dir=dirname){
   # fileName and dirName set globally for each run
   return(line)
 }
+
