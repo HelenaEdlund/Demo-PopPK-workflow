@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------
 #  Add comments to blueprint rendered character strings
 # ------------------------------------------------------------------
-nm_comments <- function(refRun=NA, description, author, 
+nm_comments <- function(ref_run=NA, description, author, 
                         date=NULL, version=NULL, label=NULL, structural=NULL, 
                         covariate=NULL, IIV=NULL, IOV=NULL, res=NULL, estimation=NULL){
   

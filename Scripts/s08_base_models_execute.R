@@ -109,7 +109,7 @@ if(model_no=="001"){
   run001rend <- render(run001)
   
   run001rend <- cltfile_update(run001rend)
-  run001rend <- add_comments(run001rend, refRun = based_on,
+  run001rend <- add_comments(run001rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
@@ -153,15 +153,15 @@ if(model_no=="002"){
   parms <- names(run002$get_params())
   run002rend <- render(run002)
   
-  run002rend <- cltFileUpdate(run002rend)
-  run002rend <- add_comments(run002rend, refRun = based_on,
+  run002rend <- cltfile_update(run002rend)
+  run002rend <- add_comments(run002rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run002rend, file=file.path(base_model_dir, filename)) 
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod2 <- nm(cmd = psnExecute, 
@@ -205,15 +205,15 @@ if(model_no=="003"){
   run003rend <- render(run003)
   
   # update tables
-  run003rend <- cltFileUpdate(run003rend)
-  run003rend <- add_comments(run003rend, refRun = based_on,
+  run003rend <- cltfile_update(run003rend)
+  run003rend <- add_comments(run003rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run003rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod3 <- nm(cmd = psnExecute, 
@@ -258,15 +258,15 @@ if(model_no=="003m3"){
   #   run003m3rend <- render(run003m3)
   #   
   #   # update tables
-  #   run003m3rend <- cltFileUpdate(run003m3rend)
-  #   run003m3rend <- add_comments(run003m3rend, refRun = based_on,
+  #   run003m3rend <- cltfile_update(run003m3rend)
+  #   run003m3rend <- add_comments(run003m3rend, ref_run = based_on,
   #                              description = description, author = analystName)
   #   
   #   # --- write file to cluster
   #   write(run003m3rend, file=file.path(base_model_dir, filename))
   #   
   #   # command line update
-  #   psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  #   psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   #   
   #   # --- Add to run using nmproject
   #   mod3m3 <- nm(cmd = psnExecute, 
@@ -314,15 +314,15 @@ if(model_no=="004"){
   run004rend <- render(run004)
   
   # update tables
-  run004rend <- cltFileUpdate(run004rend)
-  run004rend <- add_comments(run004rend, refRun = based_on,
+  run004rend <- cltfile_update(run004rend)
+  run004rend <- add_comments(run004rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run004rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod4 <- nm(cmd = psnExecute, 
@@ -356,15 +356,15 @@ if(model_no=="005"){
   run005rend <- render(run005)
   
   # update tables
-  run005rend <- cltFileUpdate(run005rend)
-  run005rend <- add_comments(run005rend, refRun = based_on,
+  run005rend <- cltfile_update(run005rend)
+  run005rend <- add_comments(run005rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run005rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod5 <- nm(cmd = psnExecute, 
@@ -413,15 +413,15 @@ if(model_no=="006"){
   run006rend <- render(run006)
   
   # update tables
-  run006rend <- cltFileUpdate(run006rend)
-  run006rend <- add_comments(run006rend, refRun = based_on,
+  run006rend <- cltfile_update(run006rend)
+  run006rend <- add_comments(run006rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run006rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod6 <- nm(cmd = psnExecute, 
@@ -467,15 +467,15 @@ if(model_no=="007"){
   run007rend <- render(run007)
   
   # update tables
-  run007rend <- cltFileUpdate(run007rend)
-  run007rend <- add_comments(run007rend, refRun = based_on,
+  run007rend <- cltfile_update(run007rend)
+  run007rend <- add_comments(run007rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run007rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod7 <- nm(cmd = psnExecute, 
@@ -532,15 +532,15 @@ if(model_no=="008"){
   run008rend <- render(run008)
   
   # update tables
-  run008rend <- cltFileUpdate(run008rend)
-  run008rend <- add_comments(run008rend, refRun = based_on,
+  run008rend <- cltfile_update(run008rend)
+  run008rend <- add_comments(run008rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run008rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod8 <- nm(cmd = psnExecute, 
@@ -580,15 +580,15 @@ if(model_no=="009"){
   run009rend <- render(run009)
   
   # update tables
-  run009rend <- cltFileUpdate(run009rend)
-  run009rend <- add_comments(run009rend, refRun = based_on,
+  run009rend <- cltfile_update(run009rend)
+  run009rend <- add_comments(run009rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run009rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod9 <- nm(cmd = psnExecute, 
@@ -622,15 +622,15 @@ if(model_no=="010"){
   run010rend <- render(run010)
   
   # update tables
-  run010rend <- cltFileUpdate(run010rend)
-  run010rend <- add_comments(run010rend, refRun = based_on,
+  run010rend <- cltfile_update(run010rend)
+  run010rend <- add_comments(run010rend, ref_run = based_on,
                              description = description, author = analystName)
   
   # --- write file to cluster
   write(run010rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod10 <- nm(cmd = psnExecute, 
@@ -668,13 +668,13 @@ if(model_no=="011"){
   run011rend <- render(run011)
   
   # update tables
-  run011rend <- cltFileUpdate(run011rend)
+  run011rend <- cltfile_update(run011rend)
   
   # --- write file to cluster
   write(run011rend, file=file.path(base_model_dir, filename))
   
   # command line update
-  psnExecute <- executeUpdate(psnExecuteTemp, filename, dir_name)  
+  psnExecute <- execute_update(psnExecuteTemp, filename, dir_name)  
   
   # --- Add to run using nmproject
   mod11 <- nm(cmd = psnExecute, 

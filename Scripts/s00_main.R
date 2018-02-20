@@ -23,7 +23,7 @@ source_dir <- function(path, trace=TRUE, ...) {
 
 # ----------- Project setup -------------------
 source_dir("./Scripts/Setup")
-# sourceDir("./Scripts/Functions")
+sourceDir("./Scripts/Functions")
 # tidyproject checks
 Renvironment_info()
 check_session()
@@ -51,23 +51,19 @@ rmarkdown::render(input = file.path("Scripts", "s04_eda_covariates.Rmd"),
 rmarkdown::render(input = file.path("Scripts", "s05_eda_conc_time.Rmd"), 
                   params = list(print_results=F))
 rmarkdown::render(input = file.path("Scripts", "s06_eda_pk_linearity.Rmd"), 
-                  params = list(print_results=F))
+                  params = list(print_results=T))
 
 # The error: 
 # Error in unlockBinding("params", <environment>) : no binding for "params"
 # Can be ignored. It's because we need to delete "params" before the scripts is done.
 
 # ----------- Preparation of NONMEM datasets ------------------
-# If printCSV is true the script outputs the dataset(s) to "DerivedData", 
+# If print_csv is true the script outputs the dataset(s) to "DerivedData", 
 # otherwise it just saves the datasets and the names of the datasets s07.RData
 rmarkdown::render(input =file.path("Scripts","s07_nm_datasets.Rmd"), 
                   params = list(print_csv=TRUE))
 
-
-
-
+# ----------- Model development ------------------
 
 ## To be continued with model development and reporting ##
-
-
 
